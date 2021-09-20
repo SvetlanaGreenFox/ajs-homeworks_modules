@@ -9,22 +9,18 @@ module.exports = {
  module: {
   rules: [
    {
-    test: /\.js$/,
+    test: /\.m?js$/,
     exclude: /node_modules/,
     use: {
      loader: 'babel-loader',
     },
    },
    {
-    test: /\.html$/,
-    use: [
-     {
-      loader: 'html-loader',
-     },
-    ],
+    test: /\.html$/i,
+    loader: 'html-loader',
    },
    {
-    test: /\.css$/,
+    test: /\.css$/i,
     use: [
      MiniCssExtractPlugin.loader, 'css-loader',
     ],
@@ -41,5 +37,5 @@ module.exports = {
    chunkFilename: '[id].css',
   }),
  ],
-};
+}
 
